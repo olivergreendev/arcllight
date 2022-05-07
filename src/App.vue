@@ -44,6 +44,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 #app {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -68,5 +69,33 @@ a {
 }
 .mr-auto {
     margin-right: auto;
+}
+/* Transitions */
+/* Fade Slide Up */
+.fade-slide-up-enter-active, .fade-slide-up-leave.active {
+    transition: opacity .3s ease,
+                transform .3s ease;
+}
+.fade-slide-up-enter, .fade-slide-up-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+}
+/* Fade Slide Up Slow */
+.fade-slide-up-slow-enter-active, .fade-slide-up-slow-leave.active {
+    transition: opacity .6s ease,
+                transform .6s ease;
+}
+.fade-slide-up-slow-enter, .fade-slide-up-slow-leave-to {
+    opacity: 0;
+    transform: translateY(40px);
+}
+/* Fade Slide Down */
+.fade-slide-down-enter-active, .fade-slide-down-leave.active {
+    transition: opacity .3s ease,
+                transform .3s ease;
+}
+.fade-slide-down-enter, .fade-slide-down-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
 }
 </style>

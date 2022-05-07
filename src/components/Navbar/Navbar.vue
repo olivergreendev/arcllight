@@ -1,18 +1,20 @@
 <template>
     <nav class="navbar">
         <div class="nav-links">
-            <div class="nav-link flex align-center has-dropdown">
-                <router-link :to="{ name: 'features' }">Features</router-link>
+            <div class="nav-link flex align-center has-dropdown" @click="showFeaturesDropdown = true" v-on-clickaway="hideFeaturesDropdown">
+                <a>Features</a>
                 <i class="bi bi-chevron-down dropdown-toggle"></i>
-                <div class="dropdown">
-                    <div class="dropdown-links-wrapper">
-                        <ul class="dropdown-links">
-                            <li>Feature 1</li>
-                            <li>Feature 2</li>
-                            <li>Feature 3</li>
-                        </ul>
+                <transition name="fade-slide-down">
+                    <div class="dropdown" v-show="showFeaturesDropdown" >
+                        <div class="dropdown-links-wrapper">
+                            <ul class="dropdown-links">
+                                <li>Feature 1</li>
+                                <li>Feature 2</li>
+                                <li>Feature 3</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </transition>
             </div>
             <div class="nav-link">
                 <router-link :to="{ name: 'pricing' }">Pricing</router-link>
@@ -41,8 +43,18 @@
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
+
 export default {
-    
+    mixins: [ clickaway ],
+    data: () => ({
+        showFeaturesDropdown: false
+    }),
+    methods: {
+        hideFeaturesDropdown() {
+            this.showFeaturesDropdown = false;
+        }
+    }
 }
 </script>
 
@@ -100,25 +112,26 @@ export default {
 .navbar .nav-links .nav-link .gradient-button {
     color: white;
     padding: 12px 20px;
-    background: linear-gradient(to right, var(--accent-01) 0%, var(--accent-02) 100%);
+    background: linear-gradient(to left, var(--accent-01), var(--accent-02), var(--accent-01));
+    background-size: 200%;
     border-radius: 4px;
-    transition: background 0.2s ease;
+    transition: background 0.4s ease;
 }
 .navbar .nav-links .nav-link .gradient-button:hover {
-    background-position: 100px;
+    background-position: right;
 }
 .navbar .nav-links .nav-link:hover {
     color: white;
 }
 .navbar .nav-links .nav-link.has-dropdown .dropdown {
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: 0;
-    background: var(--grey-primary);
+    background: #131027;
     border-radius: 8px;
     padding: 20px;
     width: 100%;
-    color: var(--bg-color);
+    color: var(--grey-primary);
 }
 .navbar .nav-links .nav-link.has-dropdown .dropdown .dropdown-links {
     margin: 0;

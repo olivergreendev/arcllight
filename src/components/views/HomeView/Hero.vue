@@ -1,13 +1,19 @@
 <template>
     <div class="hero">
         <div class="hero-main">
-            <div class="hero-text">Turn your ideas into reality.</div>
-            <div class="learn-more flex justify-center align-center">
-                <router-link :to="{ name: 'about' }" class="learn-more-link">
-                    Learn More
-                </router-link>
-                <i class="bi bi-chevron-right"></i>
-            </div>
+            <transition name="fade-slide-up-slow" appear>
+                <div class="hero-text">
+                    Turn your ideas into reality.
+                </div>
+            </transition>
+            <transition name="fade-slide-up-slow" appear>
+                <div class="learn-more flex justify-center align-center" style="transition-delay: 0.2s">
+                    <router-link :to="{ name: 'about' }" class="learn-more-link">
+                        Learn More
+                    </router-link>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+            </transition>
         </div>
         <div class="hero-bg">
             <img src="/images/hero-bg.png" alt="hero background">
