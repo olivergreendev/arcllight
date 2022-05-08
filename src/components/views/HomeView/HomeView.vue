@@ -1,15 +1,17 @@
 <template>
     <div>
         <Hero></Hero>
+        <KeyFeatures></KeyFeatures>
     </div>
 </template>
 
 <script>
-import Hero from './Hero.vue';
+import Hero from './components/Hero.vue';
+import KeyFeatures from './components/KeyFeatures.vue';
 
 export default {
     components: {
-        Hero
+        Hero, KeyFeatures
     }
 }
 </script>
