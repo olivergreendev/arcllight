@@ -70,6 +70,14 @@ a {
 .mr-auto {
     margin-right: auto;
 }
+.relative {
+    position: relative;
+}
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 30px 40px;
+}
 /* Transitions */
 /* Fade Slide Up */
 .fade-slide-up-enter-active, .fade-slide-up-leave.active {

@@ -1,32 +1,34 @@
 <template>
     <nav class="navbar">
         <div class="nav-links">
-            <div class="nav-link flex align-center has-dropdown"
-                 :class="{'active': showFeaturesDropdown}"
-                 @click="showFeaturesDropdown = true"
-                 v-on-clickaway="hideFeaturesDropdown">
-                <a class="nav-link-text">Features</a>
-                <i class="bi bi-chevron-down dropdown-toggle"></i>
-                <transition name="fade-slide-down">
-                    <div class="dropdown" v-show="showFeaturesDropdown" >
-                        <div class="dropdown-links-wrapper">
-                            <ul class="dropdown-links">
-                                <li><a class="dropdown-link">Feature 1</a></li>
-                                <li><a class="dropdown-link">Feature 2</a></li>
-                                <li><a class="dropdown-link">Feature 3</a></li>
-                            </ul>
+            <div class="flex align-center relative">
+                <div class="nav-link flex align-center has-dropdown"
+                     :class="{'active': showFeaturesDropdown}"
+                     @click="showFeaturesDropdown = true"
+                     v-on-clickaway="hideFeaturesDropdown">
+                    <a class="nav-link-text">Features</a>
+                    <i class="bi bi-chevron-down dropdown-toggle"></i>
+                    <transition name="fade-slide-down">
+                        <div class="dropdown" v-show="showFeaturesDropdown" >
+                            <div class="dropdown-links-wrapper">
+                                <ul class="dropdown-links">
+                                    <li><a class="dropdown-link">Feature 1</a></li>
+                                    <li><a class="dropdown-link">Feature 2</a></li>
+                                    <li><a class="dropdown-link">Feature 3</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </transition>
-            </div>
-            <div class="nav-link">
-                <router-link :to="{ name: 'pricing' }">Pricing</router-link>
-            </div>
-            <div class="nav-link">
-                <router-link :to="{ name: 'academy' }">Academy</router-link>
-            </div>
-            <div class="nav-link">
-                <router-link :to="{ name: 'blog' }">Blog</router-link>
+                    </transition>
+                </div>
+                <div class="nav-link">
+                    <router-link :to="{ name: 'pricing' }">Pricing</router-link>
+                </div>
+                <div class="nav-link">
+                    <router-link :to="{ name: 'academy' }">Academy</router-link>
+                </div>
+                <div class="nav-link">
+                    <router-link :to="{ name: 'blog' }">Blog</router-link>
+                </div>
             </div>
         </div>
         <div class="nav-logo nav-links">
@@ -142,7 +144,7 @@ export default {
     background: #131027;
     border-radius: 8px;
     padding: 20px;
-    width: 75%;
+    width: 100%;
     color: var(--grey-primary);
     box-shadow: 0 3px 30px 0 rgba(0,0,0,0.3);
     z-index: 1;

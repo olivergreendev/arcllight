@@ -12,6 +12,9 @@ import KeyFeatures from './components/KeyFeatures.vue';
 export default {
     components: {
         Hero, KeyFeatures
+    },
+    mounted () {
+        window.scrollTo(0, 0);
     }
 }
 </script>
